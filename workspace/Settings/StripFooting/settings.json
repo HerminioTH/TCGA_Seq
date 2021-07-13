@@ -1,0 +1,242 @@
+{
+   "Matrix_list": [
+                     "../../../matrices/prop_filter/",
+                     "../../../matrices/heterogeneous/StripFooting/Berea_sandstone/poisson_0.25_0.2/",
+                     "../../../matrices/homogeneous/StripFooting/Hard_sediment/poisson_0.25_0.0/",
+                     "../../../matrices/homogeneous/StripFooting/Abyssal_red_clay/poisson_0.4_0.0/"
+                  ],
+   "Output": "../../../results/heterogeneous/StripFooting/Poisson_binario/Hard_sediment/",
+   "Matrices": "../../../matrices/heterogeneous/StripFooting/Hard_sediment/poisson_min_0.0_max_0.45/",
+   "Grid": {
+      "Indices": [
+         2
+      ],
+      "Paths": [
+         "../../grids/msh/3D/StripFooting/unstruct_1135v_6077e_tet.msh",
+         "../../grids/msh/3D/StripFooting/unstruct_2335v_12725e_tet.msh",
+         "../../grids/msh/3D/StripFooting/unstruct_4791v_26832e_tet.msh",
+         "../../grids/msh/3D/StripFooting/unstruct_6893v_39035e_tet.msh",
+         "../../grids/msh/3D/StripFooting/unstruct_10081v_57514e_tet.msh",
+         "../../grids/msh/3D/StripFooting/strip_1060v_1606e_hex.msh",
+         "../../grids/msh/3D/StripFooting/strip_9220v_11361e_hex.msh"
+      ]
+   },
+   "TimeSettings": {
+      "FinalTime": 10000000.0,
+      "TimeStep": 500000.0,
+      "Unit": "Second"
+   },
+   "SolverSettings": {
+      "method": "GMRES",
+      "tolerance": 1e-8,
+      "maxiter": 350,
+      "restart": 200
+   },
+   "CGA": {
+      "useCGA": true,
+      "delta_init": 1.0,
+      "step": 2.0,
+      "reduction_factor": 1.618
+   },
+   "Properties": {
+      "BODY": {
+         "cf": 4.44e-10,
+         "mu": 0.001,
+         "rhof": 1000.0,
+         "kx": {
+            "value": 1e-10,
+            "delta": 0.0,
+            "seed": 1
+         },
+         "ky": {
+            "value": 1e-10,
+            "delta": 0.0,
+            "seed": 2
+         },
+         "kz": {
+            "value": 1e-10,
+            "delta": 0.0,
+            "seed": 3
+         },
+         "phi": {
+            "value": 0.47,
+            "delta": 0.0,
+            "seed": 4
+         },
+         "rhos": {
+            "value": 2500.0,
+            "delta": 0.0,
+            "seed": 5
+         },
+         "cs": {
+            "value": 2.78e-11,
+            "delta": 0.0,
+            "seed": 6
+         },
+         "nu": {
+            "value": 0.225,
+            "delta": 0.225,
+            "seed": 7
+         },
+         "G": {
+            "value": 26100000.0,
+            "delta": 0.0,
+            "seed": 8
+         }
+      }
+   },
+   "BoundaryConditions": {
+      "u_x": {
+         "InitialValue": 0.0,
+         "WEST": {
+            "condition": "DIRICHLET_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "EAST": {
+            "condition": "DIRICHLET_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "BOTTOM": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "TOP": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "TOP_LOAD": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "NORTH": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "SOUTH": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         }
+      },
+      "u_y": {
+         "InitialValue": 0.0,
+         "WEST": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "EAST": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "BOTTOM": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "TOP": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "TOP_LOAD": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "NORTH": {
+            "condition": "DIRICHLET_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "SOUTH": {
+            "condition": "DIRICHLET_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         }
+      },
+      "u_z": {
+         "InitialValue": 0.0,
+         "WEST": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "EAST": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "BOTTOM": {
+            "condition": "DIRICHLET_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "TOP": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "TOP_LOAD": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 100000.0
+         },
+         "NORTH": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "SOUTH": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         }
+      },
+      "p": {
+         "InitialValue": 0.0,
+         "WEST": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "EAST": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "BOTTOM": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "TOP": {
+            "condition": "DIRICHLET_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "TOP_LOAD": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "NORTH": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         },
+         "SOUTH": {
+            "condition": "NEUMANN_BOUNDARY_CONDITION",
+            "type": "BOUNDARY_CONDITION_CONSTANT_VALUE",
+            "value": 0.0
+         }
+      }
+   }
+}
