@@ -1,7 +1,7 @@
 {
    "Output":   "../../../results/homogeneous/Terzaghi/Test_0/Hard_sediment/",
-   "Matrices": "../matrices/homogeneous/Terzaghi/Hard_sediment/",
-   "Grid":     "../grids/msh/3D/Terzaghi/terza_27v_32e_hex.msh",
+   "Matrices": "../../matrices/homogeneous/Terzaghi/Hard_sediment/",
+   "Grid":     "../../../grids/msh/3D/Terzaghi/terza_27v_32e_hex.msh",
    "Properties": {
       "Body": {
          "cf": 4.44e-10,
