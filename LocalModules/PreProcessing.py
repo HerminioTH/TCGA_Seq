@@ -24,7 +24,6 @@ class PreProcessing(object):
 		self.writeProperties()
 		self.buildMatrices()
 		self.buildVector()
-		self.saveLinearSystem()
 
 	def buildProblemData(self):
 		tic = perf_counter()
@@ -83,16 +82,17 @@ class PreProcessing(object):
 		toc = perf_counter()
 		if self.show_time: print("buildVector: %.5f"%(toc-tic))
 
-	def saveLinearSystem(self):
+	def saveLinearSystem(self, outputPath=None):
+		if not outputPath:	outputPath = self.settings["Matrices"]
 		tic = perf_counter()
-		savePickleData(self.settings["Matrices"], "/mat_K", 	self.mat_K)
-		savePickleData(self.settings["Matrices"], "/mat_L", 	self.mat_L)
-		savePickleData(self.settings["Matrices"], "/mat_Q", 	self.mat_Q)
-		savePickleData(self.settings["Matrices"], "/mat_H", 	self.mat_H)
-		savePickleData(self.settings["Matrices"], "/mat_B", 	self.mat_B)
-		savePickleData(self.settings["Matrices"], "/mat_A", 	self.mat_A)
-		savePickleData(self.settings["Matrices"], "/mat_A_rhs", self.mat_A_rhs)
-		savePickleData(self.settings["Matrices"], "/vec_b", 	self.vec_b)
+		savePickleData(outputPath, "/mat_K", 	self.mat_K)
+		savePickleData(outputPath, "/mat_L", 	self.mat_L)
+		savePickleData(outputPath, "/mat_Q", 	self.mat_Q)
+		savePickleData(outputPath, "/mat_H", 	self.mat_H)
+		savePickleData(outputPath, "/mat_B", 	self.mat_B)
+		savePickleData(outputPath, "/mat_A", 	self.mat_A)
+		savePickleData(outputPath, "/mat_A_rhs", self.mat_A_rhs)
+		savePickleData(outputPath, "/vec_b", 	self.vec_b)
 		toc = perf_counter()
 		if self.show_time: print("saveLinearSystem: %.5f"%(toc-tic))
 

@@ -14,6 +14,7 @@ from PreProcessing import *
 
 def main():
 	preproc = PreProcessing("settings.json")
+	preproc.saveLinearSystem()
 
 if __name__ == '__main__':
 	main()
